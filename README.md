@@ -28,7 +28,7 @@ docker run \
     -e FRANKENPHP_CONFIG="worker ./public/index.php" \
     -v $PWD:/app \
     -p 80:80 -p 443:443/tcp -p 443:443/udp \
-    --name FrankenPHP-demo \
+    --name FrankenPHP-admin \
     dunglas/frankenphp
 ```
 
@@ -39,7 +39,7 @@ by yourself.
 Create the database (It uses a local SQLite database stored in `var/data.db`):
 
 ```console
-docker exec -it FrankenPHP-demo php bin/console doctrine:migrations:migrate --no-interaction
+docker exec -it FrankenPHP-admin php bin/console doctrine:migrations:migrate --no-interaction
 ```
 
 Then you can access the application:
