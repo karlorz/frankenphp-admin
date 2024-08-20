@@ -57,6 +57,24 @@ symfony serve
 
 The repository also includes [a benchmark](benchmark) comparing FrankenPHP and PHP-FPM.
 
+### Composer SonataAdminBundle
+* [Sonata admin page](https://localhost/admin)
+
+```console
+docker run --rm -it -v $PWD:/app composer:latest require sonata-project/admin-bundle
+docker run --rm -it -v $PWD:/app composer:latest require sonata-project/doctrine-orm-admin-bundle
+docker exec -it FrankenPHP-admin php bin/console cache:clear
+docker exec -it FrankenPHP-admin php bin/console assets:install
+
+docker exec -it FrankenPHP-admin php bin/console doctrine:schema:update --dump-sql
+docker exec -it FrankenPHP-admin php bin/console doctrine:schema:update --dump-sql --force
+docker exec -it FrankenPHP-admin php bin/console doctrine:schema:create
+```
+or
+```console
+docker run --rm -it -v $PWD:/app composer:latest install
+```
+
 ## Package as a Standalone Binary
 
 The demo app can be packaged as a self-contained binary containing
