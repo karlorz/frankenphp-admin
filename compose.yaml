@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  frankenphp-demo:
+  frankenphp-admin:
     image: dunglas/frankenphp
     environment:
       FRANKENPHP_CONFIG: "worker ./public/index.php"

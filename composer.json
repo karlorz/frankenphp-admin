@@ -9,6 +9,7 @@
         "doctrine/doctrine-bundle": "^2.10.2",
         "doctrine/doctrine-migrations-bundle": "^3.2.4",
         "doctrine/orm": "^3.0.1",
+        "nelmio/api-doc-bundle": "^4.29",
         "runtime/frankenphp-symfony": "^0.2.0",
         "sonata-project/admin-bundle": "^4.31",
         "sonata-project/doctrine-orm-admin-bundle": "^4.17",

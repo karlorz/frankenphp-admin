@@ -19,6 +19,15 @@ Or if you have composer installed locally:
 composer install
 ```
 
+```console
+docker run --rm -it -v $PWD:/app composer:latest require nelmio/api-doc-bundle
+
+docker compose exec frankenphp-admin /bin/sh -c 'chmod +x bin/console'
+docker compose exec frankenphp-admin /bin/sh -c 'php bin/console doctrine:schema:update --dump-sql --complete'
+
+docker compose exec frankenphp-admin /bin/sh -c 'php bin/console cache:clear'
+```
+
 ### The project
 
 Run the project with Docker (worker mode):
