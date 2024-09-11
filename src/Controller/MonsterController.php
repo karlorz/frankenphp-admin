@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Monster;
 use Doctrine\ORM\EntityManagerInterface;
-use Nelmio\ApiDocBundle\Annotation\Model;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,7 +28,7 @@ class MonsterController extends AbstractController
             new OA\Response(
                 response: 200,
                 description: 'Successful response',
-                content: new OA\JsonContent(ref: new Model(type: Monster::class))
+                content: new OA\JsonContent(ref: '#/components/schemas/Monster')
             )
         ]
     )]
